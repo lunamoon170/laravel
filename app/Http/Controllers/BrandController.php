@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Brand;
 use App\Models\Multipic;
 use Illuminate\Http\Request;
 use illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Redirect;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Auth;
 
 
 class BrandController extends Controller
@@ -137,4 +138,11 @@ class BrandController extends Controller
      }
      return Redirect()->back()->with('success','Multi Image Inserted Successful');
     }
+
+    public function Logout(){
+        Auth::logout();
+        return Redirect()->route('login')->with('success','User Logout');
+    }
 }
+
+
