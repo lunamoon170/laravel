@@ -28,9 +28,6 @@
 
         <!-- sidebar menu -->
         <ul class="nav sidebar-inner" id="sidebar-menu">
-
-
-
             <li  class="has-sub active expand" >
               <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard"
                 aria-expanded="false" aria-controls="dashboard">
@@ -42,7 +39,7 @@
                 <div class="sub-menu">
 
                       <li  class="active" >
-                        <a class="sidenav-item-link" href="index.html">
+                        <a class="sidenav-item-link" href="{{ route('home.slider') }}">
                           <span class="nav-text">Slider</span>
                         </a>
                       </li>

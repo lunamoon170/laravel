@@ -5,7 +5,6 @@ use App\Models\Brand;
 use App\Models\Multipic;
 use Illuminate\Http\Request;
 use illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Redirect;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Auth;
 
