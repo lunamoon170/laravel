@@ -70,9 +70,6 @@ Route::get('/home/slider',[HomeController::class,'HomeSlider'])->name('home.slid
 Route::get('/add/slider',[HomeController::class,'AddSlider'])->name('add.slider');
 Route::post('/store/slider',[HomeController::class,'StoreSlider'])->name('store.slider');
 
-
-
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
      // $users= User::all();
     //$users=DB::table('users')->get();
