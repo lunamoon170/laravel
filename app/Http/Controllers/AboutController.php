@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\HomeAbout;
+use App\Models\Multipic;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Redirect;
 
@@ -47,5 +48,10 @@ class AboutController extends Controller
     public function Deleteabout($id){
         $delete=HomeAbout::find($id)->Delete();
         return Redirect()->back()->with('success','About Delete Succefully');
+    }
+
+    public function Portfolio(){
+        $images=Multipic::all();
+        return view('pages.portfolio',compact('images'));
     }
 }
