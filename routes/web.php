@@ -6,7 +6,6 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\HomeController;
-use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -23,7 +22,8 @@ use Illuminate\Support\Facades\DB;
 Route::get('/', function () {
     $brands=DB::table('brands')->get();
     $abouts=DB::table('home_abouts')->first();
-    return view('home',compact('brands','abouts'));
+    $images=DB::table('multipics')->get();
+    return view('home',compact('brands','abouts','images'));
 });
 
 Route::get('/about', function () {
