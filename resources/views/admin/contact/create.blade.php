@@ -4,24 +4,24 @@
 <div class="col-lg-12">
     <div class="card card-default">
         <div class="card-header card-header-border-bottom">
-            <h2>Create HomeAbout</h2>
+            <h2>Create Contact</h2>
         </div>
         <div class="card-body">
-            <form action="{{ route('store.about') }}" method="POST">
+            <form action="{{ route('store.contact') }}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">About Title</label>
-                    <input type="text" class="form-control" name="title" placeholder="">
+                    <label for="exampleFormControlInput1">Contact Email</label>
+                    <input type="text" class="form-control" name="email" placeholder="Contact Email">
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Short Description</label>
-                    <textarea class="form-control"  rows="3" name="short_dis"></textarea>
+                    <label for="exampleFormControlTextarea1">Contact Phone</label>
+                    <input type="text" class="form-control" name="phone" placeholder="Contact Phone">
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Long Description</label>
-                    <textarea class="form-control"  rows="3" name="long_dis" placeholder></textarea>
+                    <label for="exampleFormControlTextarea1">Contact address</label>
+                    <textarea class="form-control"  rows="3" name="address" placeholder="Contact address"></textarea>
                 </div>
 
                 <div class="form-footer pt-4 pt-5 mt-4 border-top">
