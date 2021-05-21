@@ -23,7 +23,8 @@ Route::get('/', function () {
     $brands=DB::table('brands')->get();
     $abouts=DB::table('home_abouts')->first();
     $images=DB::table('multipics')->get();
-    return view('home',compact('brands','abouts','images'));
+    $contacts=DB::table('contacts')->get();
+    return view('home',compact('brands','abouts','images','contacts'));
 });
 
 Route::get('/about', function () {
@@ -92,6 +93,15 @@ Route::post('admin/store/contact',[ContactController::class,'StoreContact'])->na
 Route::get('/contact/edit/{id}',[ContactController::class,'EditContact']);
 Route::post('/update/contact/{id}',[ContactController::class,'UpdateContact']);
 Route::get('/contact/delete/{id}',[ContactController::class,'DeleteContact']);
+
+Route::get('admin/message',[ContactController::class,'AdminMessage'])->name('admin.message');
+Route::get('/message/delete/{id}',[ContactController::class,'DeleteMessage']);
+
+
+//Home contact Page route
+Route::get('/contact',[ContactController::class,'Contact'])->name('contact');
+Route::post('/contact/form',[ContactController::class,'ContactForm'])->name('contact.form');
+
 
 
 
