@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Brand;
 use App\Models\Multipic;
+use GrahamCampbell\ResultType\Success;
 use Illuminate\Http\Request;
 use illuminate\Support\Carbon;
 use Intervention\Image\Facades\Image;
@@ -54,8 +55,12 @@ class BrandController extends Controller
             'created_at'=>Carbon::now()
    ]);
 
+     $notification=array(
+         'message'=>'Brand Inserted Successfully',
+         'alert-type'=>'success'
+     );
 
-     return Redirect()->back()->with('success','Brand Inserted Successful');
+     return Redirect()->back()->with($notification);
     }
 
     public function Edit($id){
@@ -92,7 +97,12 @@ class BrandController extends Controller
         'created_at'=>Carbon::now()
         ]);
 
-     return Redirect()->back()->with('success','Brand Updated Successful');
+        $notification=array(
+            'message'=>'Brand Updated Successfully',
+            'alert-type'=>'info'
+        );
+
+     return Redirect()->back()->with($notification);
 
         }else{
             Brand::find($id)->update([
@@ -100,7 +110,11 @@ class BrandController extends Controller
                 'created_at'=>Carbon::now()
                 ]);
 
-             return Redirect()->back()->with('success','Brand Updated Successful');
+                $notification=array(
+                    'message'=>'Brand Updated Successfully',
+                    'alert-type'=>'warning'
+                );
+             return Redirect()->back()->with($notification);
         }
 
     }
@@ -110,9 +124,11 @@ class BrandController extends Controller
         $old_image=$image->brand_image;
         unlink($old_image);
         Brand::find($id)->delete();
-        return Redirect()->back()->with('success','Brand Delete Successful');
-
-
+        $notification=array(
+            'message'=>'Brand Deleted Successfully',
+            'alert-type'=>'warning'
+        );
+        return Redirect()->back()->with($notification);
     }
 
     /// This is  for Multi Image All Methods
