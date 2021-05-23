@@ -7,9 +7,14 @@ use App\Models\HomeAbout;
 use App\Models\Multipic;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 
 class AboutController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function HomeAbout(){
         $homeabout=HomeAbout::latest()->get();
         return view('admin.home.index',compact('homeabout'));
