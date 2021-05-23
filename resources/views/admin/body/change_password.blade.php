@@ -16,20 +16,19 @@
             </div>
             <div class="form-group">
                 <label for="exampleFormControlPassword3">New Password</label>
-                <input type="password" class="form-control" id="password" type="password" name="new_password" placeholder="New Password">
-                @error('New_password')
+                <input type="password" class="form-control" id="password" type="password" name="password" placeholder="New Password">
+                @error('password')
                 <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
             <div class="form-group">
                 <label for="exampleFormControlPassword3">Confirm Password</label>
-                <input type="password" class="form-control" id="password_confirmation" type="password" name="password_confirmation" placeholder="Confirm Password">
+                <input type="password" class="form-control" id="password_confirmation" type="password" name="password_ confirmation" placeholder="Confirm Password">
                 @error('password_confirmation')
                 <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
             <button class="btn btn-primary btn-default">Save</button>
-        </form>
     </div>
 </div>
 @endsection

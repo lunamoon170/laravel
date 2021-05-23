@@ -13,12 +13,12 @@ class ChangePass extends Controller
 
     public function UpdatePassword(Request $request){
         $validateData=$request->validate([
-            'oldpassword'=>'required',
+            'old_password'=>'required',
             'password'=>'required|confirmed'
         ]);
 
         $hashedPassword=Auth::user()->password;
-        if(Hash::check($request->oldpassword,$hashedPassword)){
+        if(Hash::check($request->old_password,$hashedPassword)){
             $user=User::find(Auth::id());
             $user->password = Hash::make($request->password);
             $user->save();
